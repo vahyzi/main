@@ -54,7 +54,7 @@ public class MapFragment extends Fragment {
             @Override
             public void onMapReady(GoogleMap mMap) {
                 googleMap = mMap;
-                
+
             }
         });
 
