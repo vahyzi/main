@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Bike implements Parcelable {
-    private String ID;
     private String make;
     private String model;
     private String type;
@@ -48,7 +47,6 @@ public class Bike implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(this.ID);
         dest.writeString(this.make);
         dest.writeString(this.model);
         dest.writeString(this.type);
@@ -59,7 +57,6 @@ public class Bike implements Parcelable {
     }
 
     protected Bike(Parcel in) {
-        this.ID = in.readString();
         this.make = in.readString();
         this.model = in.readString();
         this.type = in.readString();
