@@ -1,4 +1,4 @@
-package edu.fsu.cs.mobile.bikealert;
+package edu.fsu.cs.mobile.bikeapp;
 
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseUser;
