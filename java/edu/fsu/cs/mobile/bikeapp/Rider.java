@@ -53,6 +53,6 @@ public class Rider {
 
     // Testing Rider
     public static Rider generateRider(FirebaseUser user, GeoPoint point, Bike bike) {
-        return new Rider(user.getEmail(), Timestamp.now(), new GeoPoint(1, 1), bike);
+        return new Rider(user.getEmail(), Timestamp.now(), point, bike);
     }
 }
