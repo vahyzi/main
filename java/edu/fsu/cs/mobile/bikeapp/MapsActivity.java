@@ -39,7 +39,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapsActivity extends AppCompatActivity implements GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener, OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements GoogleMap.OnMyLocationButtonClickListener, GoogleMap.OnMyLocationClickListener, OnMapReadyCallback,
+        NavigationView.OnNavigationItemSelectedListener {
 
     private EditText mSearchText;
     private DrawerLayout drawer;
@@ -64,15 +65,15 @@ public class MapsActivity extends AppCompatActivity implements GoogleMap.OnMyLoc
         mSearchText = findViewById(R.id.input_search);
         mSearchText.setSingleLine(); // to press return key as enter key when searching
 
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        drawer = findViewById(R.id.drawer_layout);
-//        NavigationView navigationView = findViewById(R.id.nav_view);
-//        navigationView.setNavigationItemSelectedListener(this);
-//
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.addDrawerListener(toggle);
-//        toggle.syncState();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
 
         // Get the SupportMapFragment and request notification
         // when the map is ready to be used.
@@ -81,39 +82,39 @@ public class MapsActivity extends AppCompatActivity implements GoogleMap.OnMyLoc
         mapView = mapFragment.getView(); // set mapView for moving the currentLocation button
         if(savedInstanceState == null){
             mapFragment.getMapAsync(this);
-//          navigationView.setCheckedItem(R.id.map);
+          navigationView.setCheckedItem(R.id.map);
         }
     }
 
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-//        switch (menuItem.getItemId()){
-//            case R.id.map:
-//                //switch to mapfrag
-//                break;
-//            case R.id.profile:
-//                //switch to profilefrag
-//                break;
-//            case R.id.friends:
-//                //switch to friendsfrag
-//                break;
-//            case R.id.settings:
-//                //switch to bikesfrag
-//                break;
-//        }
-//
-//        drawer.closeDrawer(GravityCompat.START);
-//        return true;
-//    }
-//
-//    @Override
-//    public void onBackPressed() {
-//        if(drawer.isDrawerOpen(GravityCompat.START)){
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
+    @Override
+    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+        switch (menuItem.getItemId()){
+            case R.id.map:
+                //switch to mapfrag
+                break;
+            case R.id.profile:
+                //switch to profilefrag
+                break;
+            case R.id.friends:
+                //switch to friendsfrag
+                break;
+            case R.id.settings:
+                //switch to bikesfrag
+                break;
+        }
+
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+    @Override
+    public void onBackPressed() {
+        if(drawer.isDrawerOpen(GravityCompat.START)){
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
 
     // ---- Where the map is prepared after getMapAsync is called ---- //
     @Override
