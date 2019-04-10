@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/bike_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp">
+
+    <EditText
+        android:id="@+id/make"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:hint="Make" />
+
+    <EditText
+        android:id="@+id/model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="75dp"
+        android:ems="10"
+        android:hint="Model"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/type_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="135dp"
+        android:ems="10"
+        android:entries="@array/bike_type">
+
+    </Spinner>
+
+    <EditText
+        android:id="@+id/color"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="175dp"
+        android:ems="10"
+        android:hint="Color"
+        android:inputType="textPersonName" />
+
+    <Spinner
+        android:id="@+id/size_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="235dp"
+        android:ems="10"
+        android:entries="@array/wheel_size">
+
+    </Spinner>
+
+    <EditText
+        android:id="@+id/tire_width"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="275dp"
+        android:ems="10"
+        android:hint="Tire Width"
+        android:inputType="textPersonName" />
+
+
+    <Spinner
+        android:id="@+id/valve_spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="235dp"
+        android:ems="10"
+        android:entries="@array/valve">
+    </Spinner>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/make"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="580dp"
+        android:layout_marginRight="25dp"
+        android:text="done" />
+
+    <Button
+        android:id="@+id/reset"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/make"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="580dp"
+        android:layout_marginRight="270dp"
+        android:text="done" />
+
+
+</RelativeLayout>
